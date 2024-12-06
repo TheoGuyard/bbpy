@@ -22,5 +22,5 @@ jobs:
         python -m pip install -U .[dev]
     - name: Lint
       run: |
-        flake8 src
+        flake8 bbpy
         flake8 tests
