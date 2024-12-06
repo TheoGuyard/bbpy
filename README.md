@@ -2,14 +2,29 @@ bbpy
 =====
 *-A generic Branch-and-Bound framework in python-*
 
-<!-- [![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://theoguyard.github.io/bbpy/html/index.html) -->
+
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/downloads/release/python-390/)
-<!-- [![PyPI version](https://badge.fury.io/py/bbpy.svg)](https://pypi.org/project/bbpy/) -->
-<!-- [![codecov](https://codecov.io/github/TheoGuyard/bbpy/graph/badge.svg?token=H2IA4O67X6)](https://codecov.io/github/TheoGuyard/bbpy) -->
-<!-- [![Test Status](https://github.com/TheoGuyard/bbpy/actions/workflows/test.yml/badge.svg)](https://github.com/TheoGuyard/bbpy/actions/workflows/test.yml) -->
+[![codecov](https://codecov.io/gh/TheoGuyard/bbpy/graph/badge.svg?token=EbZsPTg9DP)](https://codecov.io/gh/TheoGuyard/bbpy)
 [![License](https://img.shields.io/badge/License-AGPL--v3-red.svg)](https://github.com/TheoGuyard/bbpy/blob/main/LICENSE)
 
-``bbpy`` is a Python package providing a **generic** and **modular** framework to develop **Branch-and-Bound algorithms**.
+<!-- [![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://theoguyard.github.io/bbpy/html/index.html) -->
+<!-- [![PyPI version](https://badge.fury.io/py/bbpy.svg)](https://pypi.org/project/bbpy/) -->
+<!-- [![Test Status](https://github.com/TheoGuyard/bbpy/actions/workflows/test.yml/badge.svg)](https://github.com/TheoGuyard/bbpy/actions/workflows/test.yml) -->
+
+## Overview
+
+``bbpy`` provides a generic and modular framework to develop **Branch-and-Bound algorithms** in python.
+The package allows to:
+- Define your own optimization problems and implement tailored Branch-and-Bound algorithms from template classes to make the development easier.
+- Use some built-in instances of optimization problems and associated Branch-and-Bound algorithms.
+
+<!--
+The package is organized in three main modules:
+
+- `bbpy.problem` which gather template classes to define an optimization problem
+- `bbpy.bnb` which gather template classes to implement a Branch-and-Bound algorithm
+- `bbpy.instances` which gather some built-in instances of optimization problems and associated Branch-and-Bound algorithms
+--> 
 
 <!-- 
 Check out the [documentation](https://theoguyard.github.io/bbpy/html/index.html) for a starting tour of the package. 
