@@ -11,7 +11,7 @@ dynamic = ["version"]
 version = {attr = "bbpy.__version__"}
 
 [project.optional-dependencies]
-dev = ["black", "flake8", "pytest"]
+dev = ["black", "coverage", "flake8", "pytest"]
 
 [project.urls]
 "Homepage" = "https://github.com/TheoGuyard/bbpy"
