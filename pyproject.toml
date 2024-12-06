@@ -1,0 +1,22 @@
+[project]
+name = "bbpy"
+description = "A generic Branch-and-Bound framework in python"
+readme = "README.md"
+license = {file = "LICENSE", content-type = "text/markdown"}
+authors = [{name = "Theo Guyard", email = "guyard.theo@gmail.com"}]
+dependencies = ["cvxpy", "numpy", "pyscipopt"]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "bbpy.__version__"}
+
+[project.optional-dependencies]
+dev = ["black", "flake8", "pytest"]
+
+[project.urls]
+"Homepage" = "https://github.com/TheoGuyard/bbpy"
+"Bug Reports" = "https://github.com/TheoGuyard/bbpy/issues"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
