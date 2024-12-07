@@ -55,7 +55,7 @@ class Node:
         level: int,
         x=None,
         lb: float = -float("inf"),
-    ):
+    ) -> None:
         """
         Initialize a new node.
 
@@ -76,3 +76,4 @@ class Node:
         self.level = level
         self.x = x
         self.lb = lb
+        self.trace = {}

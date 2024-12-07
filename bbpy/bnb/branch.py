@@ -9,7 +9,7 @@ from .node import Node
 class BranchingRule(ABC):
     """Base class for branching rules."""
 
-    def initialize(self, problem: Problem):
+    def initialize(self, problem: Problem) -> None:
         """
         Initialize the branching rule for the given problem.
 
