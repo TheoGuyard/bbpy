@@ -10,12 +10,12 @@ class SearchingRule(ABC):
     """Base class for tree exploration rules."""
 
     @abstractmethod
-    def add(self, queue: list, node: Node):
+    def add(self, queue: list, node: Node) -> None:
         """Add a new node to the queue."""
         pass
 
     @abstractmethod
-    def get_next(self, queue: list):
+    def get_next(self, queue: list) -> Node:
         """Get the next node to explore in the queue."""
         pass
 
@@ -23,10 +23,10 @@ class SearchingRule(ABC):
 class BestFirstSearch(SearchingRule):
     """Best-First Search rule."""
 
-    def add(self, queue: list, node: Node):
+    def add(self, queue: list, node: Node) -> None:
         queue.append(node)
 
-    def get_next(self, queue: list):
+    def get_next(self, queue: list) -> Node:
         min_idx = min(range(len(queue)), key=lambda i: queue[i].lb)
         return queue.pop(min_idx)
 
@@ -34,30 +34,30 @@ class BestFirstSearch(SearchingRule):
 class BreadthFirstSearch(SearchingRule):
     """Breadth-First Search rule."""
 
-    def add(self, queue: list, node: Node):
+    def add(self, queue: list, node: Node) -> None:
         queue.append(node)
 
-    def get_next(self, queue: list):
+    def get_next(self, queue: list) -> Node:
         return queue.pop(0)
 
 
 class DepthFirstSearch(SearchingRule):
     """Depth-First Search rule."""
 
-    def add(self, queue: list, node: Node):
+    def add(self, queue: list, node: Node) -> None:
         queue.append(node)
 
-    def get_next(self, queue: list):
+    def get_next(self, queue: list) -> Node:
         return queue.pop()
 
 
 class WorstFirstSearch(SearchingRule):
     """Worst-First Search rule."""
 
-    def add(self, queue: list, node: Node):
+    def add(self, queue: list, node: Node) -> None:
         queue.append(node)
 
-    def get_next(self, queue: list):
+    def get_next(self, queue: list) -> Node:
         min_idx = max(range(len(queue)), key=lambda i: queue[i].lb)
         return queue.pop(min_idx)
 
@@ -65,8 +65,8 @@ class WorstFirstSearch(SearchingRule):
 class RandomSearch(SearchingRule):
     """Random Search rule."""
 
-    def add(self, queue: list, node: Node):
+    def add(self, queue: list, node: Node) -> None:
         queue.append(node)
 
-    def get_next(self, queue: list):
+    def get_next(self, queue: list) -> Node:
         return queue.pop(random.randint(0, len(queue) - 1))

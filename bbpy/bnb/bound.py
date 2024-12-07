@@ -24,7 +24,8 @@ class LowerBoundingMethod(ABC):
     def bound(self, node: Node) -> None:
         """Perform the lower bounding operation in the current node. The node
         internal attributes `node.lb` and `node.x` should be updated
-        accordingly during the method call.
+        accordingly during the method call. The method can also update the
+        other node attributes such as `node.trace` if needed.
 
         Parameters
         ----------
@@ -50,7 +51,8 @@ class UpperBoundingMethod(ABC):
     @abstractmethod
     def bound(self, node: Node) -> ArrayLike:
         """Perform the upper bounding operation in the current node. The method
-        must return the incumbent solution constructed.
+        must return the incumbent solution constructed. The method can also
+        update the other node attributes such as `node.trace` if needed.
 
         Parameters
         ----------

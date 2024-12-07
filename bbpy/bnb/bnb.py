@@ -64,7 +64,7 @@ class BnB(Solver):
         ub_method: Union[UpperBoundingMethod, None] = None,
         branching_rule: Union[BranchingRule, None] = None,
         searching_rule: Union[SearchingRule, None] = None,
-    ):
+    ) -> None:
         self.verbose = verbose
         self.keeptrace = keeptrace
         self.time_limit = time_limit
@@ -124,7 +124,7 @@ class BnB(Solver):
         """Default searching rule."""
         pass
 
-    def _display_header(self):
+    def _display_header(self) -> None:
         print("-" * 80)
         print(
             "{:>6} | {:>6} | {:>6} | {:>9} | {:>8} | {:>8} | {:>8} | {:>8}".format(  # noqa: E501
@@ -140,7 +140,7 @@ class BnB(Solver):
         )
         print("-" * 80)
 
-    def _display_inner(self, node: Node):
+    def _display_inner(self, node: Node) -> None:
         print(
             "{:>6.2f} | {:>6} | {:>6} | {:>9} | {:>8.4f} | {:>8.4f} | {:>8.2e} | {:>8.2e}".format(  # noqa: E501
                 self.timer,
@@ -154,7 +154,7 @@ class BnB(Solver):
             )
         )
 
-    def _display_footer(self):
+    def _display_footer(self) -> None:
         print("-" * 80)
 
     def _abs_gap(self, ub: float, lb: float) -> float:
@@ -250,6 +250,7 @@ class BnB(Solver):
                         "queue_size": len(self.queue),
                         "best_ub": self.best_ub,
                         "best_lb": self.best_lb,
+                        "node": node.trace,
                     }
                 )
 
